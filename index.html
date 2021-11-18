@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KattenRadar - Search</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <ul>
+            <li>
+                <a href="#"> <img src="img/logotype.svg" alt="Logotype"></a>
+            </li>
+            <li>
+                <ul class="header__menu_list">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/searches">Huidige Zoekacties</a>
+                    </li>
+                    <li>
+                        <a href="/about">Huidige Zoekacties</a>
+                    </li>
+                    <li>
+                        <a href="/about">Dutch <img class="header__down" src="img/icons/header_down.svg" alt="Down"></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="header__start_search">Zoekactie starten</button>
+            </li>
+        </ul>
+    </div>
+    <!-- HEADER END -->
+
+    <!-- SEARCH -->
+    <section class="search">
+        <div class="container">
+            <div class="search__steps">
+                <div class="search__step">
+                    <div class="search__step_circle">
+                        <p class="search__step_number">1</p>
+                    </div>
+                    <p class="search__step_name">Kies locatie <img class="search__step_info" src="img/icons/step_info.svg" alt="Step Info"></p>
+                    <div class="search__step_desc">
+                        <p class="search__step_desc_title">Waarom heb je de laatste kattenlocatie nodig?</p>
+                        <p class="search__step_desc_text">We gebruiken targeting op locatie om ontbrekende kattenkaarten te bezorgen aan mensen in de buurt van die locatie kom meer te weten</p>
+                    </div>
+                </div>
+                <div class="search__step step_inactive">
+                    <div class="search__step_circle">
+                        <p class="search__step_number">2</p>
+                    </div>
+                    <p class="search__step_name">Maak zoekactie <img class="search__step_info" src="img/icons/step_info.svg" alt="Step Info"></p>
+                    <div class="search__step_desc">
+                        <p class="search__step_desc_title">Waarom heb je de laatste kattenlocatie nodig?</p>
+                        <p class="search__step_desc_text">We gebruiken targeting op locatie om ontbrekende kattenkaarten te bezorgen aan mensen in de buurt van die locatie kom meer te weten</p>
+                    </div>
+                </div>
+                <div class="search__step step_inactive">
+                    <div class="search__step_circle">
+                        <p class="search__step_number">3</p>
+                    </div>
+                    <p class="search__step_name">Kies bereik <img class="search__step_info" src="img/icons/step_info.svg" alt="Step Info"></p>
+                    <div class="search__step_desc">
+                        <p class="search__step_desc_title">Waarom heb je de laatste kattenlocatie nodig?</p>
+                        <p class="search__step_desc_text">We gebruiken targeting op locatie om ontbrekende kattenkaarten te bezorgen aan mensen in de buurt van die locatie kom meer te weten</p>
+                    </div>
+                </div>
+                <div class="search__step step_inactive">
+                    <div class="search__step_circle">
+                        <p class="search__step_number">4</p>
+                    </div>
+                    <p class="search__step_name">Betalen <img class="search__step_info" src="img/icons/step_info.svg" alt="Step Info"></p>
+                    <div class="search__step_desc">
+                        <p class="search__step_desc_title">Waarom heb je de laatste kattenlocatie nodig?</p>
+                        <p class="search__step_desc_text">We gebruiken targeting op locatie om ontbrekende kattenkaarten te bezorgen aan mensen in de buurt van die locatie kom meer te weten</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search__map">
+            <img class="search__figure" src="/img/background_figure.png" alt="Figure">
+            <div class="container">
+                <h1>Op welke straat is je kat vermist?</h1>
+                <div class="search__map_container">
+                    <div id="map" class="map__blured"></div>
+                    <div class="search__map_form">
+                        <div>
+                            <img src="img/icons/map.svg" alt="map">
+                            <input id="location" class="search__map_adress" placeholder="Typ hier uw adres">
+                            <!-- HIDDEN GOOGLE FORMS -->
+                            <input type="hidden" placeholder="Apt, Suite, etc (optional)" />
+                            <input type="hidden" placeholder="City" id="locality" />
+                            <div class="half-input-container">
+                                <input type="hidden" class="half-input" placeholder="State/Province" id="administrative_area_level_1" />
+                                <input type="hidden" class="half-input" placeholder="Zip/Postal code" id="postal_code" />
+                            </div>
+                            <input type="hidden" placeholder="Country" id="country" />
+                            <!-- END -->
+                        </div>
+                        <button class="search__map_button">Aanmelden <img class="search__button_arrow"
+                                src="img/icons/arrow_right.svg" alt="right"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- SEARCH END -->
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            <div class="footer__info">
+                <img src="/img/footer_logo.svg" alt="Footer Logo">
+                <div class="footer__info_adress">
+                    <div>
+                        <img src="img/icons/email.svg" alt="email">
+                        <span>info@kattenradar.nl</span>
+                    </div>
+                    <div>
+                        <img src="img/icons/phone.svg" alt="phone">
+                        <span>+31 6 276 553 21</span>
+                    </div>
+                </div>
+                <div class="footer__info_adress">
+                    <div>
+                        <img src="img/icons/map_footer.svg" alt="map">
+                        <span>Amsterdam, Victorieplein 27a1, 1079 KM</span>
+                    </div>
+                    <div>
+                        <img src="img/icons/bag.svg" alt="bag">
+                        <span>KvK-nummer: 71505083</span>
+                    </div>
+                </div>
+                <div class="footer__info_links">
+                    <a href="#">Naar dashboard</a>
+                    <a href="#">Neem contact met ons op</a>
+                    <a href="#">KattenRadar Blog</a>
+                </div>
+            </div>
+            <div class="footer_links">
+                <a href="#">Terms of service</a>
+                <a href="#">Privacy policy</a>
+            </div>
+            <p class="footer_bottom_text">© kattenradar, Inc. 2019. We love our users!</p>
+        </div>
+    </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFA6udGwPSgJt_QacZp9tatCTazR32t2U&libraries=places&callback=initMap&solution_channel=GMP_QB_addressselection_v1_cABC" async defer></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
