@@ -150,7 +150,7 @@ $('.search__map_button').click(function() {
 
     setTimeout(() => {
 
-        $('.search__steps').attr('style', 'background-image: url(../img/step__line_2.svg)')
+        $('.search__steps').attr('style', 'background-image: url(./img/step__line_2.svg)')
         $('#step-1').find('.search__step_circle').addClass('step__done')
 
         $('#step-2').removeClass('step_inactive')
