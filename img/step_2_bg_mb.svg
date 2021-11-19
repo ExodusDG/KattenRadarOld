@@ -1,0 +1,34 @@
+<svg width="482" height="892" viewBox="0 0 482 892" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_36_1973)">
+<rect x="35" y="25" width="412" height="822" fill="white"/>
+</g>
+<mask id="mask0_36_1973" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="35" y="25" width="412" height="822">
+<rect x="35" y="25.0001" width="412" height="822" fill="white"/>
+</mask>
+<g mask="url(#mask0_36_1973)">
+<circle opacity="0.1" cx="403.627" cy="6.91212" r="47.2849" transform="rotate(105 403.627 6.91212)" fill="#F8A35B"/>
+<circle opacity="0.1" cx="363.814" cy="29.901" r="32.5084" transform="rotate(105 363.814 29.901)" fill="#F8A35B"/>
+<g opacity="0.2" filter="url(#filter1_f_36_1973)">
+<ellipse cx="405" cy="820" rx="96" ry="95" fill="#F8A35B"/>
+</g>
+<circle opacity="0.5" cx="116.5" cy="680.5" r="48.5" stroke="#91F082" stroke-width="10"/>
+<ellipse opacity="0.5" cx="34.3301" cy="816" rx="28" ry="27.5" transform="rotate(-18.6186 34.3301 816)" fill="#91F082"/>
+<ellipse opacity="0.5" cx="9.71287" cy="830.624" rx="22" ry="21.5" transform="rotate(-18.6186 9.71287 830.624)" fill="#91F082"/>
+</g>
+<defs>
+<filter id="filter0_d_36_1973" x="0" y="0" width="482" height="892" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="10"/>
+<feGaussianBlur stdDeviation="17.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.354167 0 0 0 0 0.354167 0 0 0 0 0.354167 0 0 0 0.11 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_36_1973"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_36_1973" result="shape"/>
+</filter>
+<filter id="filter1_f_36_1973" x="65" y="481" width="680" height="678" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="122" result="effect1_foregroundBlur_36_1973"/>
+</filter>
+</defs>
+</svg>

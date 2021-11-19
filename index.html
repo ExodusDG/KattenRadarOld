@@ -43,7 +43,7 @@
     <section class="search">
         <div class="container">
             <div class="search__steps">
-                <div class="search__step">
+                <div class="search__step" id="step-1">
                     <div class="search__step_circle">
                         <p class="search__step_number">1</p>
                     </div>
@@ -53,7 +53,7 @@
                         <p class="search__step_desc_text">We gebruiken targeting op locatie om ontbrekende kattenkaarten te bezorgen aan mensen in de buurt van die locatie kom meer te weten</p>
                     </div>
                 </div>
-                <div class="search__step step_inactive">
+                <div class="search__step step_inactive" id="step-2">
                     <div class="search__step_circle">
                         <p class="search__step_number">2</p>
                     </div>
@@ -85,32 +85,324 @@
                 </div>
             </div>
         </div>
-        <div class="search__map">
-            <img class="search__figure" src="img/background_figure.png" alt="Figure">
-            <div class="container">
-                <h1>Op welke straat is je kat vermist?</h1>
-                <div class="search__map_container">
-                    <div id="map" class="map__blured"></div>
-                    <div class="search__map_form">
-                        <div>
-                            <img src="img/icons/map.svg" alt="map">
-                            <input id="location" class="search__map_adress" placeholder="Typ hier uw adres">
-                            <!-- HIDDEN GOOGLE FORMS -->
-                            <input type="hidden" placeholder="Apt, Suite, etc (optional)" />
-                            <input type="hidden" placeholder="City" id="locality" />
-                            <div class="half-input-container">
-                                <input type="hidden" class="half-input" placeholder="State/Province" id="administrative_area_level_1" />
-                                <input type="hidden" class="half-input" placeholder="Zip/Postal code" id="postal_code" />
+        <div class="search__steps_list">
+            <!--    <img class="search__figure" src="img/background_figure.png" alt="Figure"> -->
+            <div class="search__steps_container">
+                <!-- MAP -->
+                <div class="search__map">
+
+                    <div class="container">
+                        <h1>Op welke straat is je kat vermist?</h1>
+                        <div class="search__map_container">
+                            <div id="map" class="map__blured"></div>
+                            <div class="search__map_form">
+                                <div>
+                                    <img src="img/icons/map.svg" alt="map">
+                                    <input id="location" class="search__map_adress" placeholder="Typ hier uw adres">
+                                    <!-- HIDDEN GOOGLE FORMS -->
+                                    <input type="hidden" placeholder="Apt, Suite, etc (optional)" />
+                                    <input type="hidden" placeholder="City" id="locality" />
+                                    <div class="half-input-container">
+                                        <input type="hidden" class="half-input" placeholder="State/Province" id="administrative_area_level_1" />
+                                        <input type="hidden" class="half-input" placeholder="Zip/Postal code" id="postal_code" />
+                                    </div>
+                                    <input type="hidden" placeholder="Country" id="country" />
+                                    <!-- END -->
+                                </div>
+                                <button class="search__map_button">Aanmelden <img class="search__button_arrow"
+                                    src="img/icons/arrow_right.svg" alt="right"></button>
                             </div>
-                            <input type="hidden" placeholder="Country" id="country" />
-                            <!-- END -->
                         </div>
-                        <button class="search__map_button">Aanmelden <img class="search__button_arrow"
-                                src="img/icons/arrow_right.svg" alt="right"></button>
+                    </div>
+                </div>
+                <!-- CHAT -->
+                <div class="search__chat">
+                    <h1>Zoekactie starten in Amsterdam</h1>
+                    <div class="search__chat_box">
+                        <div class="chat__left_side">
+                            <div class="chat__left_messages">
+                                <!-- BOT -->
+                                <div class="chat__message">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Hallo! Je bent eerder al een chat begonnen. Wat wil je doen?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_1">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_text_body">
+                                            <p>Opnieuw Beginnen</p>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_1">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Hoe heet je vermiste kat?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_2">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_text_body">
+                                            <p>Opnieuw Beginnen</p>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_2">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Klik op 'kies een bestand' om een foto te kiezen van Test.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_3">
+                                    <div class="chat__user_message_text">
+                                        <img class="chat_file_upload" src="img/icons/chat_file_upload.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- USER (Image) -->
+                                <div class="chat__user_message" id="user_msg_4">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_image">
+                                            <img src="img/cat.png" alt="Cat">
+                                            <div class="chat__user_img_name">
+                                                Cat.png
+                                            </div>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_3">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Wil je de tekst onder de foto wijzigen?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_5_1">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_text_body">
+                                            <p>Ja</p>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_5_2">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_text_body">
+                                            <p>Nee</p>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_4">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Schrijf een e-mail waarnaar we je alle informatie sturen</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_6">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_text_body">
+                                            <p>Ja</p>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_5">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Is deze e-mail correct: <span></span>?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_7">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_text_body">
+                                            <p>Ja</p>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_7">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Wil je een sms ontvangen bij belangrijke updates van de zoekactie naar <span></span>?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_8">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_text_body">
+                                            <p>Ja</p>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_8">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Wat is je telefoonnummer?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_9">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__left_text_1">
+                                            <input type="text" name="phone" id="phone" placeholder="Typ hier...">
+                                            <img class="email__number_send" id="number__send" src="/img/icons/send.svg" alt="Send">
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_9">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Klopt dit nummer: <span></span> ?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- USER -->
+                                <div class="chat__user_message" id="user_msg_10">
+                                    <div class="chat__user_message_text">
+                                        <div class="chat__user_text_body">
+                                            <p>Ja</p>
+                                        </div>
+                                        <img src="img/icons/Bubble_Point_orange.svg" alt="User">
+                                    </div>
+
+                                    <img src="img/icons/chat_user_avatar.svg" alt="User avatar">
+                                </div>
+                                <!-- BOT -->
+                                <div class="chat__message" id="bot_msg_10">
+                                    <img src="img/Avatar.png" alt="Avatar">
+                                    <div class="chat__message_text">
+                                        <img src="img/icons/Bubble_point.svg" alt="Point">
+                                        <div class="chat__message_text_body">
+                                            <p>Om de zoekactie aan jouw buurtgenoten rondom <span id="map__street"></span> te laten zien gebruiken we betaalde promotie via Facebook en Instagram. De kosten hiervoor zijn afhankelijk van hoeveel buurtgenoten
+                                                je wilt bereiken.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat__left_controls">
+                                <div class="chat__left_start">
+                                    <button class="chat__start_repeat">Opnieuw Beginnen <img src="img/icons/rotate.svg" alt="rotate"></button>
+                                    <button class="chat__start_where">Waar ik gebleven was <img src="img/icons/arrow_right_orange.svg" alt="arrow_right"></button>
+                                </div>
+                                <div class="chat__left_input" style="display: none;">
+                                    <img class="chat__send_avatar" src="img/icons/chat__send_avatar.svg" alt="User avatar">
+                                    <div class="chat__left_text">
+                                        <input type="text" name="cat_name" id="cat_name" placeholder="Typ hier...">
+                                        <img class="chat__cat_send" src="/img/icons/send.svg" alt="Send">
+                                    </div>
+                                </div>
+                                <div class="chat__left_buttons" style="display: none;">
+                                    <button class="chat__left_b_done"><img src="img/icons/done.svg" alt="Done"> Ja</button>
+                                    <button class="chat__left_b_error"><img src="img/icons/error.svg" alt="Done"> Nee</button>
+                                </div>
+                                <div class="chat__input_big" style="display: none;">
+                                    <img class="chat__send_avatar" src="img/icons/chat__send_avatar.svg" alt="User avatar">
+                                    <div class="chat__left_text">
+                                        <textarea type="text" name="cat_desc" id="cat_desc" value=""></textarea>
+                                        <img class="chat__cat_send_1" src="/img/icons/send.svg" alt="Send">
+                                    </div>
+                                </div>
+                                <div class="chat__left_input_email" style="display: none;">
+                                    <img class="chat__send_avatar" src="img/icons/chat__send_avatar.svg" alt="User avatar">
+                                    <div class="chat__left_text">
+                                        <input type="text" name="email" id="email" placeholder="Typ hier...">
+                                        <img class="email__cat_send" src="/img/icons/send.svg" alt="Send">
+                                    </div>
+                                </div>
+                                <div class="chat__left_buttons_email" style="display: none;">
+                                    <button class="chat__left_e_done"><img src="img/icons/done.svg" alt="Done"> Ja</button>
+                                    <button class="chat__left_e_error"><img src="img/icons/error.svg" alt="Done"> Nee</button>
+                                </div>
+                                <div class="chat__left_buttons_notif" style="display: none;">
+                                    <button class="chat__left_n_done"><img src="img/icons/done.svg" alt="Done"> Ja</button>
+                                    <button class="chat__left_n_error"><img src="img/icons/error.svg" alt="Done"> Nee</button>
+                                </div>
+
+                                <div class="chat__left_buttons_phone" style="display: none;">
+                                    <button class="chat__left_p_done"><img src="img/icons/done.svg" alt="Done"> Ja</button>
+                                    <button class="chat__left_p_error"><img src="img/icons/error.svg" alt="Done"> Nee</button>
+                                </div>
+
+                                <div class="chat__left_final" style="display: none;">
+                                    <button class="chat__left_final_orange">Zie kosten en kies buurtgenoten</button>
+                                    <button class="chat__left_final_white">Waarom kost een zoekactie geld?</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat__right_side">
+                            <img src="img/phone.svg" alt="phone">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
     </section>
     <!-- SEARCH END -->
