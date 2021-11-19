@@ -158,7 +158,10 @@ $('.search__map_button').click(function() {
         $('.search__steps_container').attr('style', 'transform: translateX(-1110px)')
 
     }, 1000);
+})
 
+$('.chat__start_repeat').click(function() {
+    $('.search__steps_container').attr('style', 'transform: translateX(0px)')
 })
 
 $('.chat__start_where').click(function() {
