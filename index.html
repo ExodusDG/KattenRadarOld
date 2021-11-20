@@ -63,7 +63,7 @@
                         <p class="search__step_desc_text">We gebruiken targeting op locatie om ontbrekende kattenkaarten te bezorgen aan mensen in de buurt van die locatie kom meer te weten</p>
                     </div>
                 </div>
-                <div class="search__step step_inactive">
+                <div class="search__step step_inactive" id="step-3">
                     <div class="search__step_circle">
                         <p class="search__step_number">3</p>
                     </div>
@@ -73,7 +73,7 @@
                         <p class="search__step_desc_text">We gebruiken targeting op locatie om ontbrekende kattenkaarten te bezorgen aan mensen in de buurt van die locatie kom meer te weten</p>
                     </div>
                 </div>
-                <div class="search__step step_inactive">
+                <div class="search__step step_inactive" id="step-4">
                     <div class="search__step_circle">
                         <p class="search__step_number">4</p>
                     </div>
@@ -87,7 +87,7 @@
         </div>
         <div class="search__steps_list">
             <!--    <img class="search__figure" src="img/background_figure.png" alt="Figure"> -->
-            <div class="search__steps_container">
+            <div class="search__steps_container" style="transform: translateX(-0px)">
                 <!-- MAP -->
                 <div class="search__map">
 
@@ -98,7 +98,7 @@
                             <div class="search__map_form">
                                 <div>
                                     <img src="img/icons/map.svg" alt="map">
-                                    <input id="location" class="search__map_adress" placeholder="Typ hier uw adres">
+                                    <input id="location" type="text" class="search__map_adress" placeholder="Typ hier uw adres">
                                     <!-- HIDDEN GOOGLE FORMS -->
                                     <input type="hidden" placeholder="Apt, Suite, etc (optional)" />
                                     <input type="hidden" placeholder="City" id="locality" />
@@ -122,7 +122,7 @@
                         <div class="chat__left_side">
                             <div class="chat__left_messages">
                                 <!-- BOT -->
-                                <div class="chat__message">
+                                <div class="chat__message" id="bot_msg_0">
                                     <img src="img/Avatar.png" alt="Avatar">
                                     <div class="chat__message_text">
                                         <img src="img/icons/Bubble_point.svg" alt="Point">
@@ -322,7 +322,7 @@
                                     </div>
                                 </div>
                                 <!-- USER -->
-                                <div class="chat__user_message" id="user_msg_10">
+                                <div class="chat__user_message user__msg_show" id="user_msg_10">
                                     <div class="chat__user_message_text">
                                         <div class="chat__user_text_body">
                                             <p>Ja</p>
@@ -396,7 +396,10 @@
                             </div>
                         </div>
                         <div class="chat__right_side">
-                            <img src="img/phone.svg" alt="phone">
+                            <div class="chat__right_phone">
+
+                            </div>
+
                         </div>
                     </div>
                 </div>

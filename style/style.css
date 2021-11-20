@@ -150,6 +150,7 @@ ul {
     text-align: center;
     width: 25%;
     position: relative;
+    cursor: pointer;
 }
 
 .search h1 {
@@ -530,6 +531,14 @@ footer {
     position: relative;
 }
 
+.chat__right_phone {
+    background-image: url(../img/phone.png);
+    background-repeat: no-repeat;
+    height: 616px;
+    width: 314px;
+    margin: 0 auto;
+}
+
 .chat__left_controls {
     position: absolute;
     bottom: 40px;
@@ -633,6 +642,47 @@ footer {
     right: 0%;
     display: flex;
     justify-content: flex-end;
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateX(100px);
+}
+
+.chat__message {
+    transform: translateX(-100px);
+}
+
+.chat__msg_bot {
+    animation-name: bot__msg_anim;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.user__msg_show {
+    animation-name: user__msg_anim;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bot__msg_anim {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes user__msg_anim {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
 .chat__user_message_text {
@@ -836,7 +886,7 @@ footer {
 }
 
 .chat__left_final button {
-    width: 45%;
+    width: 48%;
     height: 60px;
     font-weight: 700;
     font-size: 16px;
