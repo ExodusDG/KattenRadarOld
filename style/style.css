@@ -545,6 +545,68 @@ footer {
     left: 40px;
 }
 
+.chat__phone__body {
+    position: absolute;
+    left: 24px;
+    top: 124px;
+    width: 266px;
+    overflow-x: hidden;
+    height: 269px;
+}
+
+.chat__phone__cat {
+    position: absolute;
+    left: 60px;
+    height: 269px;
+    display: none;
+}
+
+.chat__phone__left {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+}
+
+.chat__right_phone {
+    position: relative;
+}
+
+.chat__phone_text {
+    position: absolute;
+    width: 80px;
+    z-index: 3;
+    color: white;
+    margin-top: 30px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.chat__catname {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    opacity: 0;
+}
+
+.chat__last_loc {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.chat__info {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.chat__see_cat {
+    margin-top: 60px;
+    font-weight: 500;
+    font-size: 10px;
+    opacity: 0;
+}
+
 .chat__start_repeat {
     width: 280px;
     height: 60px;
