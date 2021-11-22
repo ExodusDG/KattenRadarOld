@@ -9,6 +9,8 @@ $('.search__step').hover(
     }
 )
 
+document.cookie = "user=John";
+
 /* GOOGLE MAP */
 
 // This example requires the Places library. Include the libraries=places + AIzaSyDFA6udGwPSgJt_QacZp9tatCTazR32t2U
@@ -16,8 +18,8 @@ $('.search__step').hover(
 // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places">
 
 var myLatlng;
-var CatAdress;
 var userEmail;
+var catAdress;
 
 function initMap() {
     const componentForm = [
@@ -53,7 +55,7 @@ function initMap() {
     $('.search__map_button').click(function() {
         marker.setVisible(false);
         const place = autocomplete.getPlace();
-        CatAdress = place.name;
+        catAdress = place.name;
         if (!place.geometry) {
             // User entered the name of a Place that was not suggested and
             // pressed the Enter key, or the Place Details request failed.
@@ -135,7 +137,6 @@ function initMap() {
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);
     }
-    CatAdress = $('#location').val();
 }
 
 /* GOOGLE MAP END */
@@ -155,9 +156,6 @@ $('.search__step').click(function() {
     } else {
         stepContainer.attr('style', 'transform: translateX(-' + calculatedTranslate + 'px)')
     }
-
-
-    //  alert(CatAdress)
 })
 
 
@@ -165,13 +163,12 @@ $('.search__step').click(function() {
 
 
 /* STEPS 1 - 2  */
-
 var catName;
 
+
 $('#bot_msg_0').addClass('chat__msg_bot')
-
+document.cookie = "steps=3";
 $('.search__map_button').click(function() {
-
     setTimeout(() => {
 
         $('.search__steps').attr('style', 'background-image: url(./img/step__line_2.svg)')
@@ -181,6 +178,8 @@ $('.search__map_button').click(function() {
 
         $('.search__steps_container').attr('style', 'transform: translateX(-1110px)')
 
+        $('.chat__last_loc > span').text(catAdress)
+        document.cookie = "adress=" + catAdress;
     }, 1000);
 })
 
@@ -202,13 +201,18 @@ $('.chat__start_where').click(function() {
 
 $('.chat__cat_send').click(function() {
     catName = $('#cat_name').val()
-
+    document.cookie = "catName=" + catName;
     setTimeout(() => {
         $('.chat__left_input').attr('style', 'display:none')
 
         $('#user_msg_2').find('p').text(catName)
         $('#user_msg_2').attr('style', 'display: flex')
         $('#user_msg_2').addClass('user__msg_show');
+        $('.chat__catname > span').text(catName);
+        $('.chat__catname').css('opacity', '1')
+
+        $('.chat__see_cat > span').text(catName);
+        $('.chat__see_cat').css('opacity', '1')
 
         setTimeout(() => {
             $('#bot_msg_2').attr('style', 'display: flex')
@@ -222,6 +226,12 @@ $('.chat__cat_send').click(function() {
 $('.chat_file_upload').click(function() {
     $('#user_msg_3').attr('style', 'display: none')
     $('#user_msg_4').attr('style', 'display: flex')
+    var catImage = $('#user_msg_4').attr('src');
+    $('.chat__phone__cat').attr('src', catImage);
+    document.cookie = "catImage=" + catImage;
+    $('.chat__phone__cat').css('display', 'block')
+
+
     $('#user_msg_4').addClass('user__msg_show');
     setTimeout(() => {
         $('#bot_msg_3').attr('style', 'display: flex')
@@ -255,6 +265,7 @@ $('.chat__cat_send_1').click(function() {
 
 $('.email__cat_send').click(function() {
     userEmail = $('#email').val();
+    document.cookie = "userEmail=" + userEmail;
     $('#user_msg_6').find('p').text(userEmail);
     $('#user_msg_6').attr('style', 'display: flex');
     $('#user_msg_6').addClass('user__msg_show');
@@ -313,7 +324,8 @@ var userNumber;
 
 $('#number__send').click(function() {
     userNumber = $('#phone').val();
-
+    document.cookie = "userNumber=" + userNumber;
+    document.cookie = "getUpdate=" + true;
     setTimeout(() => {
         $('#bot_msg_9').find('p > span').text(userNumber)
         $('#bot_msg_9').attr('style', 'display: flex');
