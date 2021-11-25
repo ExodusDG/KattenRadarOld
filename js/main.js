@@ -224,7 +224,7 @@ var catName;
 
 
 $('#bot_msg_0').addClass('chat__msg_bot')
-document.cookie = "steps=2";
+
 $('.search__map_button').click(function() {
     setTimeout(() => {
 
@@ -236,6 +236,7 @@ $('.search__map_button').click(function() {
         $('.search__steps_container').attr('style', 'transform: translateX(-1110px)')
 
         $('.chat__last_loc > span').text(catAdress)
+        document.cookie = "steps=2";
         document.cookie = "adress=" + catAdress;
     }, 1000);
 })
