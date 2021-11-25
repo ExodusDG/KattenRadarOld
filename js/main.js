@@ -1,3 +1,62 @@
+/* COOKIE DATA  */
+console.log(document.cookie)
+
+var str = document.cookie;
+
+var cookieArray = str.split(/[;] */).reduce(function(result, pairStr) {
+    var arr = pairStr.split('=');
+    if (arr.length === 2) { result[arr[0]] = arr[1]; }
+    return result;
+}, {});
+
+
+console.log(cookieArray)
+
+var chatMessageArray = [];
+
+$.each(cookieArray, function(key, value) {
+    if (typeof cookieArray.steps != 'undefined') {
+        var stepContainer = $('.search__steps_container');
+        var scrollWidth = $('.search__steps_container > div').width();
+        var calculatedTranslate = (cookieArray.steps - 1) * scrollWidth;
+        stepContainer.attr('style', 'transform: translateX(-' + calculatedTranslate + 'px)')
+
+        if (typeof cookieArray.catName != 'undefined') {
+            $('.chat__left_start').attr('style', 'display: none')
+            $('.cat__name_chat').attr('style', 'display: flex').addClass('user__msg_show')
+            $('#user_msg_2').find('p').text(cookieArray.catName)
+
+            if (typeof cookieArray.catImage != 'undefined') {
+                $('#user_msg_3').attr('style', 'display: none').removeClass('user__msg_show')
+                $('.cat__img_chat').attr('style', 'display: flex').addClass('user__msg_show');
+                $('.chat__phone__cat').attr('src', cookieArray.catImage);
+                $('.chat__phone__cat').attr('style', 'display: flex')
+
+                if (typeof cookieArray.userEmail != 'undefined') {
+                    $('.user_email_chat').attr('style', 'display: flex').addClass('user__msg_show');
+                    $('#user_msg_6').find('p').text(cookieArray.userEmail);
+                    if (typeof cookieArray.userNumber != 'undefined') {
+                        $('.user_number_chat').attr('style', 'display: flex').addClass('user__msg_show');
+                        $('#bot_msg_9').find('p > span').text(cookieArray.userNumber)
+                        $('#bot_msg_10').addClass('user__msg_show')
+                    } else {
+                        $('.chat__left_buttons_email').attr('style', 'display: flex')
+
+
+                    }
+                } else {
+                    $('.chat__left_input_email').attr('style', 'display: block')
+                }
+            }
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+})
+
+
 /* SEARCH */
 
 $('.search__step').hover(
@@ -8,8 +67,6 @@ $('.search__step').hover(
         $('.search__step_desc_show').removeClass('search__step_desc_show')
     }
 )
-
-document.cookie = "user=John";
 
 /* GOOGLE MAP */
 
@@ -167,7 +224,7 @@ var catName;
 
 
 $('#bot_msg_0').addClass('chat__msg_bot')
-document.cookie = "steps=3";
+document.cookie = "steps=2";
 $('.search__map_button').click(function() {
     setTimeout(() => {
 
@@ -226,9 +283,8 @@ $('.chat__cat_send').click(function() {
 $('.chat_file_upload').click(function() {
     $('#user_msg_3').attr('style', 'display: none')
     $('#user_msg_4').attr('style', 'display: flex')
-    var catImage = $('#user_msg_4').attr('src');
+    var catImage = $('#user_msg_4').find('img').attr('src');
     $('.chat__phone__cat').attr('src', catImage);
-    document.cookie = "catImage=" + catImage;
     $('.chat__phone__cat').css('display', 'block')
 
 
@@ -237,6 +293,9 @@ $('.chat_file_upload').click(function() {
         $('#bot_msg_3').attr('style', 'display: flex')
         $('#bot_msg_3').addClass('chat__msg_bot')
         $('.chat__left_buttons').attr('style', 'display: flex')
+
+        document.cookie = "catImage=" + catImage;
+        alert(catImage)
     }, 500);
 })
 
@@ -345,7 +404,7 @@ $('.chat__left_p_done').click(function() {
     setTimeout(() => {
 
         $('#bot_msg_10').attr('style', 'display: flex')
-        $('#bot_msg_10').find('p > span').text(CatAdress);
+            //    $('#bot_msg_10').find('p > span').text(CatAdress);
         $('#bot_msg_10').addClass('chat__msg_bot')
 
         $('.chat__left_final').attr('style', 'display: flex');
@@ -363,6 +422,8 @@ $('.chat__left_b_error').click(function() {
         $('#bot_msg_4').attr('style', 'display: flex')
         $('#bot_msg_4').addClass('chat__msg_bot')
         $('.chat__left_input_email').attr('style', 'display: block')
+
+        document.cookie = "steps=3";
     }, 500);
 })
 
@@ -371,7 +432,8 @@ $('.chat__left_n_error').click(function() {
 
     $('#bot_msg_10').attr('style', 'display: flex')
     $('#bot_msg_10').addClass('chat__msg_bot')
-    $('#bot_msg_10').find('p > span').text(CatAdress);
 
     $('.chat__left_final').attr('style', 'display: flex');
+
+    document.cookie = "steps=3";
 })
