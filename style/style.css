@@ -652,11 +652,21 @@ footer {
     cursor: pointer;
 }
 
+#bot_msg_0 {
+    display: none;
+}
+
 .chat__left_start {
     width: 620px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    display: none;
+}
+
+.chat__catname>span {
+    width: 50px !important;
+    display: inline-block;
 }
 
 .chat__left_messages {
