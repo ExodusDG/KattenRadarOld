@@ -291,6 +291,22 @@ ul {
     outline: none;
 }
 
+.step__green {
+    background: #91F082;
+    border: 2px solid #91F082;
+}
+
+.step__active {
+    background: #F9B57C !important;
+    border: 2px solid #F9B57C !important;
+    color: white !important;
+}
+
+.step__active>.search__step_number {
+    color: white;
+    opacity: 1 !important;
+}
+
 .search__map_adress::-webkit-input-placeholder {
     color: #C4C4C4;
     font-size: 16px;
@@ -539,6 +555,20 @@ footer {
     margin: 0 auto;
 }
 
+.chat__cat_desc {
+    z-index: 9999;
+    position: relative;
+    top: 475px;
+    left: 34px;
+    width: 250px;
+    text-align: left;
+    font-size: 10px;
+}
+
+.chat__cat_desc span {
+    font-weight: 700;
+}
+
 .chat__left_controls {
     position: absolute;
     bottom: 40px;
@@ -582,8 +612,9 @@ footer {
 }
 
 .chat__catname {
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 700;
+    margin-top: 10px;
     text-align: left;
     opacity: 0;
 }
@@ -601,7 +632,7 @@ footer {
 }
 
 .chat__see_cat {
-    margin-top: 60px;
+    margin-top: 30px;
     font-weight: 500;
     font-size: 10px;
     opacity: 0;

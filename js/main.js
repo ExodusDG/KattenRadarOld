@@ -19,6 +19,9 @@ if (typeof cookieArray.steps != 'undefined') {
     var scrollWidth = $('.search__steps_container > div').width();
     var calculatedTranslate = (cookieArray.steps - 1) * scrollWidth;
     stepContainer.attr('style', 'transform: translateX(-' + calculatedTranslate + 'px)')
+    $('.search__chat > h1 > span').text(cookieArray.adress)
+    $('#step-1 > .search__step_circle').addClass('step__green')
+    $('#step-2 > .search__step_circle').addClass('step__active')
 
     $('.chat__left_start').attr('style', 'display: flex')
     $('#bot_msg_0').attr('style', 'display: flex')
@@ -45,6 +48,13 @@ function chatHistoryBuild() {
             $('.chat__left_start').attr('style', 'display: none')
             $('.cat__name_chat').attr('style', 'display: flex').addClass('user__msg_show')
             $('#user_msg_2').find('p').text(cookieArray.catName)
+            $('.chat__catname').attr('style', 'opacity:1')
+            $('.chat__see_cat').attr('style', 'opacity:1')
+            $('.chat__catname > span').text(cookieArray.catName)
+            $('.chat__see_cat span').text(cookieArray.catName)
+            $('.chat__cat_desc > span').text(cookieArray.adress)
+            $('.chat__last_loc > span').text(cookieArray.adress)
+            $('.chat__cat_desc').html('<span>kattenradar </span>' + cookieArray.catDesc)
 
             if (typeof cookieArray.catImage != 'undefined') {
                 $('#user_msg_3').attr('style', 'display: none').removeClass('user__msg_show')
@@ -52,17 +62,20 @@ function chatHistoryBuild() {
                 $('.chat__phone__cat').attr('src', cookieArray.catImage);
                 $('.chat__phone__cat').attr('style', 'display: flex')
 
+
+                $('.chat__phone__cat').attr('src', cookieArray.catImage)
+                $('.chat__phone__cat').attr('display', 'block')
+
                 if (typeof cookieArray.userEmail != 'undefined') {
                     $('.user_email_chat').attr('style', 'display: flex').addClass('user__msg_show');
                     $('#user_msg_6').find('p').text(cookieArray.userEmail);
+
                     if (typeof cookieArray.userNumber != 'undefined') {
                         $('.user_number_chat').attr('style', 'display: flex').addClass('user__msg_show');
                         $('#bot_msg_9').find('p > span').text(cookieArray.userNumber)
                         $('#bot_msg_10').addClass('user__msg_show')
                     } else {
                         $('.chat__left_buttons_email').attr('style', 'display: flex')
-
-
                     }
                 } else {
                     $('.chat__left_input_email').attr('style', 'display: block')
@@ -150,7 +163,14 @@ function initMap() {
 
     var radiusOnMap;
 
-    $('.search__map_button').click(function() {
+    $('#location').keypress(function(e) {
+        if (e.which == 13) {
+            adressSelect()
+            return false; //prevent duplicate submission
+        }
+    });
+
+    function adressSelect() {
         marker.setVisible(false);
         const place = autocomplete.getPlace();
         catAdress = place.name;
@@ -202,6 +222,9 @@ function initMap() {
             $('.search__map_button').text('Aanmelden')
             $('.search__map_button').attr('id', 'map__button_top')
         }
+    }
+    $('.search__map_button').click(function() {
+        adressSelect()
     })
 
     function fillInAddress(place) { // optional parameter
@@ -250,6 +273,7 @@ $('.search__step').click(function() {
     var stepContainer = $('.search__steps_container');
     var scrollWidth = $('.search__steps_container > div').width();
     var calculatedTranslate = (clickedStep - 1) * scrollWidth;
+    $('.search__chat > h1 > span').text(catAdress)
 
     if (clickedStep == '1') {
         stepContainer.attr('style', 'transform: translateX(-' + calculatedTranslate + 'px)')
@@ -342,6 +366,7 @@ $('.chat__cat_send_1').click(function() {
 
     catDesc = $('#cat_desc').val();
     document.cookie = "catDesc=" + catDesc;
+    $('.chat__cat_desc').html('<span>kattenradar </span>' + catDesc)
     $('#user_msg_5_1').attr('style', 'display: flex')
     $('#user_msg_5_1').addClass('user__msg_show');
     $('#user_msg_5_1').find('p').text(catDesc)
