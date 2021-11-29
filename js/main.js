@@ -349,7 +349,7 @@ $('.chat_file_upload').click(function() {
         $('.chat__left_buttons').attr('style', 'display: flex')
 
         document.cookie = "catImage=" + catImage;
-        alert(catImage)
+
     }, 500);
 })
 
