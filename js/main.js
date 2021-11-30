@@ -352,6 +352,15 @@ $('.chat_file_upload').click(function() {
 
     }, 500);
 })
+$('#img__upload').click(function() {
+    $('#bot_msg_2').attr('style', 'display: none')
+    $('#bot_msg_2').removeClass('chat__msg_bot')
+    $('#user_msg_3').attr('style', 'display: none')
+    $('#user_msg_3').removeClass('user__msg_show');
+
+    $('#bot_msg_1').attr('style', 'display: flex')
+    $('.chat__left_input').attr('style', 'display:flex')
+})
 
 $('.chat__left_b_done').click(function() {
     $('#user_msg_5_1').attr('display', 'flex')
@@ -362,8 +371,14 @@ $('.chat__left_b_done').click(function() {
 
 })
 
-$('.chat__cat_send_1').click(function() {
+$('#desc__back').click(function() {
+    $('.chat__input_big').attr('style', 'display: none');
 
+    $('#bot_msg_3').attr('style', 'display: flex');
+    $('.chat__left_buttons').attr('style', 'display: flex');
+})
+
+$('.chat__cat_send_1').click(function() {
     catDesc = $('#cat_desc').val();
     document.cookie = "catDesc=" + catDesc;
     $('.chat__cat_desc').html('<span>kattenradar </span>' + catDesc)

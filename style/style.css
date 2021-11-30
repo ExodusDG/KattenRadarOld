@@ -307,6 +307,18 @@ ul {
     opacity: 1 !important;
 }
 
+.chat__back {
+    align-items: center;
+    position: absolute;
+    bottom: -40px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.chat__back_2 {
+    bottom: -25px;
+}
+
 .search__map_adress::-webkit-input-placeholder {
     color: #C4C4C4;
     font-size: 16px;
