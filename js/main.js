@@ -395,6 +395,21 @@ $('.chat__cat_send_1').click(function() {
 })
 
 
+$('#email__back').click(function() {
+
+    $('#bot_msg_4').attr('style', 'display: none')
+    $('#bot_msg_4').removeClass('chat__msg_bot')
+    $('.chat__left_input_email').attr('style', 'display: none')
+
+    $('#user_msg_5_1').attr('style', 'display: none')
+    $('#user_msg_5_2').attr('style', 'display: none')
+    $('#bot_msg_3').attr('style', 'display: none')
+    $('#user_msg_4').attr('style', 'display: none')
+
+    $('#user_msg_3').attr('style', 'display: flex')
+    $('#user_msg_3').addClass('user__msg_show')
+})
+
 $('.email__cat_send').click(function() {
     emailSend()
 })
@@ -449,6 +464,16 @@ $('.chat__left_n_error').click(function() {
     //
 })
 
+$('#mob__back').click(function() {
+    $('#user_msg_9').attr('style', 'display: none')
+    $('#bot_msg_8').attr('style', 'display: none')
+    $('#user_msg_8').attr('style', 'display: none')
+    $('#bot_msg_7').attr('style', 'display: none')
+    $('#user_msg_7').attr('style', 'display: none')
+    $('#bot_msg_5').attr('style', 'display: none')
+    $('#user_msg_6').attr('style', 'display: none')
+    $('.chat__left_input_email').attr('style', 'display: flex')
+})
 
 $('.chat__left_n_done').click(function() {
     $('#user_msg_8').attr('style', 'display: flex')
@@ -517,7 +542,7 @@ $('.chat__left_b_error').click(function() {
         $('#bot_msg_4').addClass('chat__msg_bot')
         $('.chat__left_input_email').attr('style', 'display: block')
 
-        document.cookie = "steps=3";
+        document.cookie = "steps=2";
     }, 500);
 })
 
@@ -529,5 +554,5 @@ $('.chat__left_n_error').click(function() {
 
     $('.chat__left_final').attr('style', 'display: flex');
 
-    document.cookie = "steps=3";
+    document.cookie = "steps=2";
 })
